@@ -1,0 +1,6 @@
+Outputs:
+  MyBucketName:
+    Description: "The name of the S3 bucket"
+    Value: !Ref MyS3Bucket
+    Export:
+      Name: "MyBucketName"

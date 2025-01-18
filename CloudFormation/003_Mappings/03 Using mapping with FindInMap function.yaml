@@ -1,0 +1,22 @@
+Mappings:
+  RegionMap:
+    us-east-1:
+      InstanceType: t2.micro
+    us-west-2:
+      InstanceType: t2.medium
+    eu-west-1:
+      InstanceType: t2.small
+
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType:
+        Fn::FindInMap:
+          - RegionMap
+          - !Ref "AWS::Region"
+          - InstanceType
+
+
+

@@ -1,0 +1,18 @@
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: "my-unique-bucket-name"
+
+Outputs:
+  BucketNameOutput:
+    Description: "The name of the S3 bucket"
+    Value: !Ref MyS3Bucket
+  BucketURL:
+    Description: "The URL of the S3 bucket"
+    Value: !Sub "https://s3.amazonaws.com/${MyS3Bucket}"
+    Export:
+      Name: "MyS3BucketURL"
+
+
+

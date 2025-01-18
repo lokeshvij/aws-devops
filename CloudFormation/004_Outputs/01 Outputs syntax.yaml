@@ -1,0 +1,10 @@
+Outputs:
+  OutputName:
+    Description: "A description of the output value"
+    Value: "The value you want to display"
+    Export:
+      Name: "UniqueNameForExport"
+    Condition: "ConditionName"
+    AwsRegion: "aws-region-name"
+
+

@@ -1,0 +1,5 @@
+Resources:
+  AnotherResource:
+    Type: AWS::SomeResource::Type
+    Properties:
+      BucketName: !ImportValue MyBucketName
