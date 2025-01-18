@@ -1,0 +1,19 @@
+Resources:
+  MyAutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      MinSize: "1"
+      MaxSize: "3"
+      VPCZoneIdentifier:
+        - !Select [ 0, !Fn::GetAZs '' ]
+        - !Select [ 1, !Fn::GetAZs '' ]
+        - !Select [ 2, !Fn::GetAZs '' ]
+      LaunchConfigurationName: !Ref MyLaunchConfig
+
+  MyLaunchConfig:
+    Type: AWS::AutoScaling::LaunchConfiguration
+    Properties:
+      ImageId: ami-0c55b159cbfafe1f0
+      InstanceType: t2.micro
+
+

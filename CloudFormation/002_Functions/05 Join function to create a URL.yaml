@@ -1,0 +1,13 @@
+Resources:
+  MyWebsite:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: "my-website-bucket"
+
+Outputs:
+  WebsiteURL:
+    Description: "The URL of the website"
+    Value: !Fn::Join: [ '', ['http://', !Ref MyWebsite, '.s3-website-us-east-1.amazonaws.com'] ]
+
+
+

@@ -1,0 +1,13 @@
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c55b159cbfafe1f0
+
+Outputs:
+  InstanceIDPrefix:
+    Description: "Extract the prefix of the EC2 instance ID"
+    Value: !Fn::Split: [ '-', !Ref MyEC2Instance ]
+
+
